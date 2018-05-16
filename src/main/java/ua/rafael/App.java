@@ -10,6 +10,6 @@ public class App {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(HibernateConfig.class);
-		context.getBean(HibernateTransactionManager.class);
+		System.out.println(context.getBean(HibernateTransactionManager.class));
 	}
 }
