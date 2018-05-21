@@ -28,11 +28,15 @@ import lombok.ToString;
 @Entity
 @Table(name = "contact")
 @NamedQueries({@NamedQuery(name = "Contact.findAllWithDetail",
-    query = "SELECT DISTINCT c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")})
+    query = "SELECT DISTINCT c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h"),
+    @NamedQuery(name = "Contact.findById",
+        query = "select distinct c from Contact c left join fetch c.contactTelDetails left join fetch c.hobbies h where c.id=:id")})
 @Getter
 @Setter
 @ToString
 public class Contact implements Serializable {
+  public static String FIND_ALL_WITH_DETAIL = "Contact.findAllWithDetail";
+  public static String FIND_BY_ID = "Contact.findById";
 
   @Id
   @GeneratedValue(strategy = IDENTITY)

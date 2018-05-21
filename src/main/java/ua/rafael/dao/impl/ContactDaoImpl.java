@@ -24,14 +24,16 @@ public class ContactDaoImpl implements ContactDao {
   }
 
   @Override
+  @Transactional(readOnly = true)
   public List<Contact> findAllWithDetail() {
-    return null;
+    return sessionFactory.getCurrentSession().getNamedQuery(Contact.FIND_ALL_WITH_DETAIL).list();
   }
 
   @Override
+  @Transactional(readOnly = true)
   public Contact findById(Integer id) {
-    // TODO Auto-generated method stub
-    return null;
+    return (Contact) sessionFactory.getCurrentSession().getNamedQuery(Contact.FIND_BY_ID)
+        .setParameter("id", id).uniqueResult();
   }
 
   @Override
