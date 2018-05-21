@@ -5,6 +5,7 @@ import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.GenerationType.IDENTITY;
 import static javax.persistence.TemporalType.DATE;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -70,7 +71,16 @@ public class Contact implements Serializable {
     contactTelDetails.add(contactTelDetail);
   }
 
-  public void revove(ContactTelDetail contactTelDetail) {
+  public void add(Hobby hobby) {
+    hobby.getContacts().add(this);
+    hobbies.add(hobby);
+  }
+
+  public void remove(ContactTelDetail contactTelDetail) {
     contactTelDetails.remove(contactTelDetail);
+  }
+
+  public void remove(Hobby hobby) {
+    hobbies.remove(hobby);
   }
 }

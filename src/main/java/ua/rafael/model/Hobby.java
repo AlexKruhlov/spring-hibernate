@@ -11,11 +11,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = "hobby")
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString(exclude = "contacts")
@@ -29,4 +31,8 @@ public class Hobby implements Serializable {
   @JoinTable(name = "contact_hobby_detail", joinColumns = @JoinColumn(name = "hobby_id"),
       inverseJoinColumns = @JoinColumn(name = "contact_id"))
   private Set<Contact> contacts = new HashSet<>();
+
+  public Hobby(String hobbyId) {
+    this.hobbyId = hobbyId;
+  }
 }

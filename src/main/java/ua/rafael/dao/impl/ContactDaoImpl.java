@@ -37,9 +37,11 @@ public class ContactDaoImpl implements ContactDao {
   }
 
   @Override
+  @Transactional
   public Contact save(Contact contact) {
-    // TODO Auto-generated method stub
-    return null;
+    sessionFactory.getCurrentSession().saveOrUpdate(contact);
+    LOG.info("Contact was successfully saved with id = " + contact.getId());
+    return contact;
   }
 
   @Override
