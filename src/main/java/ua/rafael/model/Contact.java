@@ -1,6 +1,7 @@
 package ua.rafael.model;
 
 import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.GenerationType.IDENTITY;
 import static javax.persistence.TemporalType.DATE;
 
@@ -47,10 +48,10 @@ public class Contact implements Serializable {
 	@Column(name = "birth_date")
 	private Date birthDate;
 
-	@OneToMany(mappedBy = "contact", cascade = ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "contact", cascade = ALL, orphanRemoval = true, fetch = EAGER)
 	private Set<ContactTelDetail> contactTelDetails = new HashSet<>();
 
-	@ManyToMany()
+	@ManyToMany(fetch = EAGER)
 	@JoinTable(name = "contact_hobby_detail", joinColumns = @JoinColumn(name = "contact_id"), inverseJoinColumns = @JoinColumn(name = "hobby_id"))
 	private Set<Hobby> hobbies = new HashSet<>();
 

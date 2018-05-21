@@ -1,30 +1,30 @@
 package ua.rafael.model;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@Table(name = "hobby")
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "contacts")
 public class Hobby implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "hobby_id")
 	private String hobbyId;
 
 	@ManyToMany

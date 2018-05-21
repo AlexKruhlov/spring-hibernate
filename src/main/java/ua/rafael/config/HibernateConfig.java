@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @PropertySource("ua/rafael/config/hibernate.properties")
-@ComponentScan("ua.rafael.config")
+@ComponentScan("ua.rafael")
 public class HibernateConfig {
 	public static String DRIVER = "hibernate.connection.driver_class";
 	public static String URL = "hibernate.connection.url";
