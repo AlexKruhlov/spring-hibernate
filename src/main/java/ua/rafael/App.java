@@ -29,5 +29,18 @@ public class App {
     contact.add(new Hobby("Reading"));
     contactDao.save(contact);
     System.out.println("FIND BY ID 4:" + contactDao.findById(4));
+
+    System.out.println("\nUPDATE contact 4");
+    contact = contactDao.findById(4);
+    contact.setFirstName("Alaidzha");
+    contact.add(new ContactTelDetail("home", "351"));
+    contact.add(new Hobby("Swimming"));
+    contactDao.save(contact);
+    System.out.println("FIND BY ID 4:" + contactDao.findById(4));
+
+    System.out.println("\nDELETE contact 4");
+    contact = contactDao.findById(4);
+    contactDao.delete(contact);
+    System.out.println("FIND BY ID 4:" + contactDao.findById(4));
   }
 }
