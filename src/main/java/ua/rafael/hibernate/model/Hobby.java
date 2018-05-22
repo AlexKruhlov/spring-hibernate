@@ -1,4 +1,4 @@
-package ua.rafael.model;
+package ua.rafael.hibernate.model;
 
 import java.io.Serializable;
 import java.util.HashSet;

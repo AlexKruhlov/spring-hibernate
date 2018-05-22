@@ -1,13 +1,13 @@
-package ua.rafael;
+package ua.rafael.hibernate;
 
 import java.util.Date;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ua.rafael.config.HibernateConfig;
-import ua.rafael.dao.ContactDao;
-import ua.rafael.model.Contact;
-import ua.rafael.model.ContactTelDetail;
-import ua.rafael.model.Hobby;
+import ua.rafael.hibernate.config.HibernateConfig;
+import ua.rafael.hibernate.dao.ContactDao;
+import ua.rafael.hibernate.model.Contact;
+import ua.rafael.hibernate.model.ContactTelDetail;
+import ua.rafael.hibernate.model.Hobby;
 
 public class App {
 

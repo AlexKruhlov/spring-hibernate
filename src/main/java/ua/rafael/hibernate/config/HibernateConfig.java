@@ -1,4 +1,4 @@
-package ua.rafael.config;
+package ua.rafael.hibernate.config;
 
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -17,8 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource("ua/rafael/config/hibernate.properties")
-@ComponentScan("ua.rafael")
+@PropertySource("ua/rafael/hibernate/config/hibernate.properties")
+@ComponentScan("ua.rafael.hibernate")
 public class HibernateConfig {
   public static String DRIVER = "hibernate.connection.driver_class";
   public static String URL = "hibernate.connection.url";

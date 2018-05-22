@@ -1,7 +1,7 @@
-package ua.rafael.dao;
+package ua.rafael.hibernate.dao;
 
 import java.util.List;
-import ua.rafael.model.Contact;
+import ua.rafael.hibernate.model.Contact;
 
 public interface ContactDao {
 

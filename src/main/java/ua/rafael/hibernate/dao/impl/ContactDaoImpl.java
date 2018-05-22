@@ -1,4 +1,4 @@
-package ua.rafael.dao.impl;
+package ua.rafael.hibernate.dao.impl;
 
 import java.util.List;
 import org.apache.commons.logging.Log;
@@ -7,8 +7,9 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ua.rafael.dao.ContactDao;
-import ua.rafael.model.Contact;
+import ua.rafael.hibernate.dao.ContactDao;
+import ua.rafael.hibernate.model.Contact;
+
 
 @Repository
 public class ContactDaoImpl implements ContactDao {

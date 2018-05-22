@@ -1,4 +1,4 @@
-package ua.rafael.model;
+package ua.rafael.hibernate.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 import java.io.Serializable;
